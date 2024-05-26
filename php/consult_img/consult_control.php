@@ -55,8 +55,7 @@ include_once('../adm_session.php');
         var select = document.getElementById("texto");
         var input = document.getElementById("inputTexto");
         var selectedOption = select.options[select.selectedIndex];
-        input.value = selectedOption.value;
-        
+        input.value = selectedOption.value;    
     }
     document.getElementById("meuForm").addEventListener("submit", function() {
         atualizarInput(); 
