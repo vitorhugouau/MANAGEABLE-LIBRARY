@@ -6,28 +6,27 @@ if(isset($_POST['email']) && isset($_POST['senha'])) {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Utilizando declarações preparadas para evitar injeção de SQL
     $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
-    $stmt = mysqli_prepare($conexao, $sql); //cria um objeto de instrução (statement), consulta SQL como uma string.
-    mysqli_stmt_bind_param($stmt, "ss", $email, $senha); //recebe argumentos objeto, uma string tipos parâmetros (strings).
-    mysqli_stmt_execute($stmt); //executa a instrução preparada com os parâmetros fornecidos.
-    $result = mysqli_stmt_get_result($stmt); //obtém o resultado da execução da instrução.
+    $stmt = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $senha);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     if (mysqli_num_rows($result) > 0) {
-        // login bem-sucedido
-        $row = mysqli_fetch_assoc($result); //extrai a primeira linha do resultado da consulta como uma matriz associativa.
-        $_SESSION['email'] = $row['email']; //variável chamada 'nome_usuario' com o valor do campo 'nome' 
-
-        // Redirecionar para a página de teste
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['email'] = $row['email'];
         header('Location: biblioteca.php');
         exit();
     } else {
         $erro = "Credenciais inválidas. Tente novamente.";
     }
+
+    mysqli_stmt_close($stmt);
 }
 
 mysqli_close($conexao);
 ?>
+
 
 <!DOCTYPE html>
  <html lang="pt-br">

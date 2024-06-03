@@ -61,9 +61,7 @@ include_once('../adm_session.php');
         input.value = selectedOption.value;
         
     }
-    document.getElementById("meuForm").addEventListener("submit", function() {
-        atualizarInput(); 
-    });
+    
 </script>
     <!-------------------------------IMAGEM NA TELA-------------------------------------------------------------------->
     <div class="container">
