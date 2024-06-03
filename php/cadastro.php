@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         echo "Erro na consulta: " . mysqli_error($conexao);
     } else {
         // Redirecionar para index.php após o envio bem-sucedido do formulário
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit();
     }
 }
@@ -97,7 +97,7 @@ if(isset($_POST['submit'])){
             <script>
                 document.getElementById("teste").addEventListener("click", function(event) {
                     event.preventDefault(); 
-                        window.location.href = "index.php";          
+                        window.location.href = "../index.php";          
                 });
             </script>
 </body> 

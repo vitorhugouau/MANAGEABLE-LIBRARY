@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('banco.php');
+include_once('php/banco.php');
 
 if(isset($_POST['email']) && isset($_POST['senha'])) {
     $email = $_POST['email'];
@@ -19,7 +19,7 @@ if(isset($_POST['email']) && isset($_POST['senha'])) {
         $_SESSION['email'] = $row['email']; //variável chamada 'nome_usuario' com o valor do campo 'nome' 
 
         // Redirecionar para a página de teste
-        header('Location: biblioteca.php');
+        header('Location: /php/biblioteca.php');
         exit();
     } else {
         $erro = "Credenciais inválidas. Tente novamente.";
@@ -83,7 +83,7 @@ mysqli_close($conexao);
     <script>
         document.getElementById("teste").addEventListener("click", function(event) {
             event.preventDefault(); 
-                window.location.href = "cadastro.php";          
+                window.location.href = "/php/cadastro.php";          
         });
     </script>
 </body>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once('biblioteca_session.php');
 include_once('banco.php');
 
 if(isset($_POST['usuario']) && isset($_POST['senha'])) {
