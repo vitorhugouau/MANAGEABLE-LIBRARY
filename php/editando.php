@@ -3,7 +3,7 @@ include_once('adm_session.php');
 ?>
 <?php
 
-if(isset($_POST['edit']) && isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['cidade']) && isset($_POST['estado'])) {
+if(isset($_POST['edit']) && isset($_POST['nome']) && isset($_POST['sobrenome']) && isset($_POST['email']) && isset($_POST['senha'])) {
     
     include('banco.php');
 
@@ -11,12 +11,12 @@ if(isset($_POST['edit']) && isset($_POST['nome']) && isset($_POST['sobrenome']) 
     $edit = $_POST['edit'];
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
-    $cidade = $_POST['cidade'];
-    $estado = $_POST['estado'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
     // codigo sql para atualizar o registro 
-    $sql = "UPDATE teste SET nome='$nome', sobrenome='$sobrenome', cidade='$cidade', 
-    estado='$estado' WHERE id=$edit";
+    $sql = "UPDATE usuarios SET nome='$nome', sobrenome='$sobrenome', email='$email', 
+    senha='$senha' WHERE id=$edit";
 
     if ($conexao->query($sql) === TRUE) {
         header('Location: inserindo.php'); 

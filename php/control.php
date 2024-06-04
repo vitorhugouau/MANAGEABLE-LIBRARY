@@ -27,7 +27,7 @@ include_once('adm_session.php');
     <div class="container">
         <form action="" method="post">
             <div class="area">
-                <input type="submit" value="EDITAR BANCO DE DADOS" formaction="inserindo.php">
+                <input type="submit" value="EDITAR USUARIOS" formaction="inserindo.php">
                 <input type="submit" value="ADICIONAR IMAGEM AO BANCO" formaction="upload.php">
                 <input type="submit" value="EDITAR/APAGAR IMAGEM" formaction="mostratela.php">
                 <input type="submit" value="CONSULTAR IMAGEM" formaction="consult_img/consult_control.php">

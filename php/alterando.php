@@ -11,7 +11,7 @@ if(isset($_POST['edit'])) {
     $edit = $_POST['edit'];
     
     // Consulta o banco de dados para obter os detalhes do registro a ser editado
-    $sql = "SELECT * FROM teste WHERE id = $edit";
+    $sql = "SELECT * FROM usuarios WHERE id = $edit";
     $result = $conexao->query($sql);
     
     if ($result->num_rows > 0) {
@@ -49,12 +49,12 @@ if(isset($_POST['edit'])) {
                     <input type="text" name="sobrenome" id="sobrenome" value="<?php echo $row['sobrenome']; ?>">
             </div>
             <div class="area">
-                <label for="cidade">CIDADE</label>
-                    <input type="text" name="cidade" id="cidade" value="<?php echo $row['cidade']; ?>">
+                <label for="email">EMAIL</label>
+                    <input type="text" name="email" id="email" value="<?php echo $row['email']; ?>">
             </div>
             <div class="area">
-                <label for="estado">ESTADO</label>
-                    <input type="text" name="estado" id="estado" value="<?php echo $row['estado']; ?>">
+                <label for="senha">SENHA</label>
+                    <input type="text" name="senha" id="senha" value="<?php echo $row['senha']; ?>">
             </div>
             <div>
                 <input type="submit" value="SALVAR ALTERAÇÕES">

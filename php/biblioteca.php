@@ -49,11 +49,14 @@ include_once('biblioteca_session.php');
     if ($result->num_rows > 0) {
         echo '<div class="container-image">';
         while($row = $result->fetch_assoc()) {
+            echo '<form action = "formulario.php" method = "post">';
             echo '<div class="container-image">';
             echo '<div class="image" data-title="' . $row["id"] . '">';
             echo '<img src="data:image/jpeg;base64,' . base64_encode($row["imagem"]) . '" alt="Imagem">';
             echo '<h3>' . $row["nome"] . '</h3>';
+            echo '<input type = "submit" id="testebotao" name = "id" value = "BAIXAR" >';
             echo '</div>';
+            echo '</form>';
             echo '</div>';
         }
         echo '</div>';

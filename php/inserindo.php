@@ -11,10 +11,10 @@ include_once('adm_session.php');
     if(isset($_POST['submit'])){
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
-        $cidade = $_POST['cidade'];
-        $estado = $_POST['estado'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
 
-        $result = mysqli_query($conexao, "INSERT INTO teste (nome, sobrenome, cidade, estado) VALUES ('$nome', '$sobrenome', '$cidade', '$estado')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES ('$nome', '$sobrenome', '$email', '$senha')");
         if (!$result) {
             echo "Erro na consulta: " . mysqli_error($conexao);
         } else {
@@ -30,7 +30,7 @@ include_once('adm_session.php');
         // verifica se recebeu o id
         $id = $_POST['delete_id'];
         // deleta o registro com base no ID
-        $sql_delete = "DELETE FROM teste WHERE id = $id";
+        $sql_delete = "DELETE FROM usuarios WHERE id = $id";
         // executa a query 
         if ($conexao->query($sql_delete) === TRUE) {
             function sucesso(){
@@ -40,7 +40,7 @@ include_once('adm_session.php');
             echo "Erro ao deletar registro: " . $conexao->error;
         }
     }
-    $sql = "SELECT * FROM teste";
+    $sql = "SELECT * FROM usuarios";
     // executa a query
     $resultado = $conexao->query($sql);
 
@@ -54,7 +54,7 @@ include_once('adm_session.php');
     <title>Inserindo</title>
     <link rel="stylesheet" href="/css/table.css">
 </head>
-<body background="/imgnovas/ti.jpg">
+<body background="/imgnovas/ti2.jpg">
 <!---------------------------------------BOTAO PARA VOLTAR------------------------------------------------------->
     <nav>
         <ul class= "menu">
@@ -85,12 +85,12 @@ include_once('adm_session.php');
                     <input type="text" name="sobrenome" id="sobrenome" required>
                 </div>
                 <div class="area">
-                    <label for="cidade">CIDADE</label>
-                    <input type="text" name="cidade" id="cidade" required>
+                    <label for="email">EMAIL</label>
+                    <input type="text" name="email" id="email" required>
                 </div>
                 <div class="area">
-                    <label for="estado">ESTADO</label>
-                    <input type="text" name="estado" id="estado" required>
+                    <label for="senha">SENHA</label>
+                    <input type="text" name="senha" id="senha" required>
                 </div>
                 <div>
                 <input type="submit" class="submit" name="submit" id="submit" required>
@@ -108,8 +108,8 @@ include_once('adm_session.php');
             <th>ID</th>
             <th>NOME</th>
             <th>SOBRENOME</th>
-            <th>CIDADE</th>
-            <th>ESTADO</th>
+            <th>EMAIL</th>
+            <th>SENHA</th>
             <th>OPÇÕES</th>
         </thead>
         <tbody>
@@ -120,8 +120,8 @@ include_once('adm_session.php');
                         <td>" . $dados["id"] ."</td>
                         <td>" . $dados["nome"] ."</td>
                         <td>". $dados["sobrenome"]."</td>
-                        <td>". $dados["cidade"]."</td>
-                        <td>". $dados["estado"]."</td>
+                        <td>". $dados["email"]."</td>
+                        <td>". $dados["senha"]."</td>
                         <td>  
                             <form method='POST'>
                             <div class='button-container'>
