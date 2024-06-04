@@ -33,13 +33,7 @@ if(isset($_POST['submit'])){
             <img src="" alt="">
         </a>
         <nav class="navbar">
-            
-            <a href="https://twitter.com/vitorhugouau" class="twitter-button">
-                <img src="/logos/twitter.svg" alt="Twitter">
-            </a>
-            <a href="https://youtube.com" class="youtube-button">
-                <img src="/logos/youtube.svg" alt="Youtube">
-            </a>
+        <!-- NADA -->
         </nav>
     </header>
 
@@ -74,7 +68,7 @@ if(isset($_POST['submit'])){
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <input type="submit" class="submit" name="submit" id="submit" >
+                                <input type="submit" class="submit" name="submit" id="submit" value="ENVIAR" >
                             </div>
                             <div class="card-cadastro">
                             <button type="submit" class="teste" id="teste">VOLTAR</button>

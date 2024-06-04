@@ -53,7 +53,7 @@ mysqli_close($conexao);
             <!-- Formulário de login -->
             <div id="login">
                 <form id="loginForm" class="card" method="POST">
-                    <h3>Login</h3>
+                    <h3>LOGIN</h3>
                     <div class="card-header"> 
                             <div class="card-content">
                                 <div class="card-content-area">

@@ -1,3 +1,6 @@
+<?php
+include('adm_session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
     <div class="navbar">
         <div class="container-top">
             <div class="logo">
-                <h1>Painel de Controle</h1>
+                <h1>PAINEL DE CONTROLE</h1>
             </div>
             <div class="panel-content">
                 <ul>
@@ -27,7 +30,11 @@
             </div>
         </div>
         <div class="container-bottom">
-            <p><a href="/php/index.php"><i class="bi bi-box-arrow-right"></i> Sair</a></p>
+            
+            <p><a href="/php/biblioteca.php"><i class="bi bi-box-arrow-right"></i> Biblioteca</a></p>
+            <p><a href="/php/logout.php"><i class="bi bi-box-arrow-right"></i> Sair</a></p>
+            
+           
         </div>
     </div>
     <div class="main-content">

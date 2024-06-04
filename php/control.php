@@ -16,6 +16,7 @@ include_once('adm_session.php');
         <ul class= "menu">
             <li><a href="biblioteca.php">BIBLIOTECA</a></li>
             <li><a href="album.php">ÁLBUM</a></li>
+            <li><a href="panelcontrol.php">PAINEL DE CONTROLE 2</a></li>
         </ul>
     </nav>
     <!---------------------------------SELECIONE UMA IMAGEM---------------------------------------------------->

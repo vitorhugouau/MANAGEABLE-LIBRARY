@@ -48,7 +48,7 @@ $texto = $_SESSION['nome'];
            // executa a query 
            if ($conexao->query($sql_delete) === TRUE) {
                // Redireciona para outra página após a exclusão
-               header('Location: panel_consult.php');
+               header('Location: consult_control.php');
                exit(); // Garante que o script pare após o redirecionamento
            } else {
                echo "Erro ao deletar registro : " . $conexao->error;

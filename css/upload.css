@@ -164,6 +164,7 @@ input[type="submit"]:hover {
     color: #01060c;
     font: normal Impact;
 }
+
 @media (max-width: 768px) {
     .container .container-image{
         display: grid;

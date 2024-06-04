@@ -31,10 +31,10 @@ body {
 
 h1 {
     text-align: center;
-    color: #737cd8;
+    color: #212767;
     font: normal 63pt Impact;
     opacity: 100%;
-    text-shadow: 6px 4px 3px rgba(0,0,0,0.6);
+    text-shadow: 6px 4px 3px rgb(100 100 100 / 60%);
 }
 
 .meio {
@@ -45,7 +45,7 @@ h1 {
 }
 
 .card {
-    background-color: rgba(19, 19, 19, 0.3);
+    background-color: rgb(19 19 19 / 70%);
     padding: 40px;
     border-radius: 6px;
     width: 280px;
@@ -58,7 +58,7 @@ h1 {
 
 .card-header {
     padding-bottom: 50px;
-    opacity: 0.8;
+    opacity: 0.89;
     color: #fff;
 }
 

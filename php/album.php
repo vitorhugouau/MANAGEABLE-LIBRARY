@@ -37,11 +37,11 @@ include_once('biblioteca_session.php');
 
         <div class="container-image">
             <div class="image" data-title="cidade toda">
-                <a href="albuns/cidadedoalto.php"><img src="/imgnovas/A2086B802610D4AC6B00D8F6C8D255E0.jpg" alt=""></a>
+                <a href="albuns/cidadedoalto.php"><img src="/imgnovas/iacanga.JPEG" alt=""></a>
                 <h3>CIDADE DO ALTO</h3>
             </div>
             <div class="image" data-title="manha">
-                <a href="albuns/nascerdosol.php"><img src="/imgnovas/DJI_0046.JPG" alt=""></a>
+                <a href="albuns/nascerdosol.php"><img src="/imgnovas/rio.JPG" alt=""></a>
                 <h3>NASCER DO SOL</h3>
             </div>
             <div class="image" data-title="praia">

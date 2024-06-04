@@ -37,7 +37,8 @@ include_once('../adm_session.php');
                     <option value="biblioteca">BIBLIOTECA</option>
                     <option value="album">ALBUM</option>
                 </select>
-                <select style="display: none;" name="texto2" onchange="atualizarInput()" id="values-img">
+                <select style="display: none;" name="texto" onchange="atualizarInput()" id="values-img">
+                    <option value="album">ALBUM</option>
                     <option value="imagens">IMAGENS</option>
                     <option value="cidade_alto">CIDADE DO ALTO</option>
                     <option value="nascer_sol">NASCER DO SOL</option>

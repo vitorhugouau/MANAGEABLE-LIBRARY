@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-image: url('/img/2880.jpg');
+    background-image: url('/imgnovas/iacanga.JPEG');
     background-size: cover; 
     background-color: white;
     color: #000;
@@ -35,8 +35,10 @@ body {
 
 h1 {
     text-align: center;
-    color: blue;
-    font: normal 50pt Impact;
+    color: #212767;
+    font: normal 63pt Impact;
+    opacity: 100%;
+    text-shadow: 6px 4px 3px rgb(100 100 100 / 60%);
 }
 
 .discord-button {
@@ -52,12 +54,12 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 67vh;
+    height: 57vh;
 }
 
 .card {
-    background-color: rgb(19 19 19 / 62%);
-    padding: 40px;
+    background-color: rgb(8 8 8 / 70%);
+    padding: 42px;
     border-radius: 6px;
     width: 280px;
     margin: 10px;
@@ -70,7 +72,7 @@ h1 {
 
 .card-header {
     padding-bottom: 50px;
-    opacity: 0.8;
+    opacity: 0.9;
     color: #fff;
 }
 .error-message {
@@ -87,7 +89,7 @@ h1 {
 .card-content label {
     color: #fff;
     font-size: 12px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .card-content-area {
