@@ -268,3 +268,9 @@ input[type="submit"]:hover {
     filter: brightness(90%);
 }
 
+.container-selects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

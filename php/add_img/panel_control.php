@@ -30,12 +30,14 @@ include_once('../adm_session.php');
             <div class="area">
                 <input type="file" accept="image/jpeg" name="fileToUpload" id="fileInput" onchange="previewImage(event)" required><br>
             </div>
-            <div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px" class="container-selects">
                 <p>SELECIONE A TABELA</p>
                 <br>
                 <select name="texto" id="texto" onchange="atualizarInput()">
                     <option value="biblioteca">BIBLIOTECA</option>
                     <option value="album">ALBUM</option>
+                </select>
+                <select style="display: none;" name="texto2" onchange="atualizarInput()" id="values-img">
                     <option value="imagens">IMAGENS</option>
                     <option value="cidade_alto">CIDADE DO ALTO</option>
                     <option value="nascer_sol">NASCER DO SOL</option>
@@ -54,14 +56,28 @@ include_once('../adm_session.php');
         </form>
     </div>
     <script>
-    function atualizarInput() {
-        var select = document.getElementById("texto");
-        var input = document.getElementById("inputTexto");
-        var selectedOption = select.options[select.selectedIndex];
-        input.value = selectedOption.value;
-        
-    }
+function atualizarInput() {
+    var select = document.getElementById("texto");
+    var input = document.getElementById("inputTexto");
+    var selectedOption = select.options[select.selectedIndex];
+    input.value = selectedOption.value;
+
+    const selectFirst = document.querySelector('#texto');
+    const selectBefore = document.getElementById('values-img');
     
+    if (selectFirst.value === 'album' && selectBefore) {
+        selectBefore.style.display = 'flex';
+    } else {
+        selectBefore.style.display = 'none';
+    }
+}
+
+document.getElementById("meuForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Para evitar que o formulário seja enviado antes de atualizar o input
+    atualizarInput();
+    this.submit(); // Envia o formulário após atualizar o input
+});
+
 </script>
     <!-------------------------------IMAGEM NA TELA-------------------------------------------------------------------->
     <div class="container">
