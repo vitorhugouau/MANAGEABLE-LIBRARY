@@ -54,7 +54,6 @@ include_once('biblioteca_session.php');
             echo '<div class="image" data-title="' . $row["id"] . '">';
             echo '<img src="data:image/jpeg;base64,' . base64_encode($row["imagem"]) . '" class="imagemDownload" alt="Imagem">';
             echo '<h3>' . $row["nome"] . '</h3>';
-            echo '<input type = "submit" id="testebotao" name = "id" value = "BAIXAR" >';
             echo '</div>';
             // echo '</form>';
             echo '<button id="buttonDownload">Baixar</button>';
@@ -77,20 +76,6 @@ include_once('biblioteca_session.php');
                 window.location.href = "logout.php";          
         });
     </script>
-    <script>
-   document.querySelectorAll('.buttonDownload').forEach(button => {
-        button.addEventListener('click', function() {
-            const base64Image = button.getAttribute('data-base64');
-            
-            const link = document.createElement('a');
-            link.href = base64Image;
-            link.download = 'image.png';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-});
-
-    </script>
+    
 </body>
 </html>

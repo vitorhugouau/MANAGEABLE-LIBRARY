@@ -18,9 +18,9 @@ if(isset($_POST["submit"])) {
         $_SESSION ['nome'] = $texto;
         header('Location: consult_table.php');
     } else {
-        echo "Erro ao enviar imagem: ";
-        echo "<a href='consult_control.php'>VOLTAR</a>";  
         
+        header('Location: erro.php');
+
     }
 }
 }catch(Exception $e){

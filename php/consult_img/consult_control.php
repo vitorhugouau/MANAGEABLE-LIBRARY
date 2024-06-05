@@ -31,9 +31,7 @@ include_once('../adm_session.php');
                 <p>SELECIONE A TABELA</p>
                 <br>
                 <select name="texto" id="texto" onchange="atualizarInput()">
-                    <option value="biblioteca">BIBLIOTECA</option>
                     <option value="album">ALBUM</option>
-                    <option value="imagens">IMAGENS</option>
                     <option value="cidade_alto">CIDADE DO ALTO</option>
                     <option value="nascer_sol">NASCER DO SOL</option>
                     <option value="rio">RIO</option>

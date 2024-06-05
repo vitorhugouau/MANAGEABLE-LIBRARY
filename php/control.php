@@ -21,7 +21,7 @@ include('adm_session.php');
             <div class="panel-content">
                 <ul>
                     <li><a href="inserindo.php">Gerenciar Usuários</a></li>
-                    <li><a href="upload.php">Adicionar Imagem ao Banco</a></li>
+                    <!-- <li><a href="upload.php">Adicionar Imagem ao Banco</a></li> -->
                     <li><a href="consult_img/consult_control.php">Consultar Imagem</a></li>
                     <li><a href="control_library.php">Biblioteca</a></li>
                     <li><a href="add_img/panel_control.php">Adicionando Imagens nos Albuns</a></li>
