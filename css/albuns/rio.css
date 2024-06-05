@@ -6,7 +6,10 @@
 
 body {
     background-image: url('/imgnovas/rio/1.JPG');
-    background-size: contain; 
+    background-repeat: no-repeat;
+    /* background-size: ; */
+    background-size: cover;
+    background-position: center;
 }
 /*-----------------------------------MENU------------------------------------*/
 .menu {

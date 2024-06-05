@@ -26,12 +26,19 @@ include_once('biblioteca_session.php');
         <li><a href="#">CONTATO</a>
             <ul><a href="https://www.instagram.com/vitor_filmes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">INSTAGRAM</a></ul>
         </li>
+
+        <li><a href="#">SERVIÇOS</a>
+            <ul>
+                <li><a href="cliente/serviço.php">CONTRATAR SERVIÇO</a></li>
+            </ul>
+        </li>
         <li><a href="adm.php">PAINEL DE CONTROLE</a></li>
         <li class="logout">
             <div class="card">
                 <button type="submit" class="submit" id="sair">SAIR</button>
             </div>
         </li>
+        
     </ul>
 </nav>
     <div class="container">

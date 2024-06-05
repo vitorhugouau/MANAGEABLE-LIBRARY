@@ -6,7 +6,10 @@
 
 body {
     background-image: url('/imgnovas/vegetação/principal.jpg');
-    background-size: contain; 
+    background-repeat: no-repeat;
+    /* background-size: ; */
+    background-size: cover;
+    background-position: center;
 }
 /*-----------------------------------MENU------------------------------------*/
 .menu {

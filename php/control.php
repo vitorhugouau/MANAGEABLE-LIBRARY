@@ -25,6 +25,7 @@ include('adm_session.php');
                     <li><a href="consult_img/consult_control.php">Consultar Imagem</a></li>
                     <li><a href="control_library.php">Biblioteca</a></li>
                     <li><a href="add_img/panel_control.php">Adicionando Imagens nos Albuns</a></li>
+                    <li><a href="cliente/crud_serviço.php">Gerenciador de clientes</a></li>
                 </ul>
             </div>
         </div>
