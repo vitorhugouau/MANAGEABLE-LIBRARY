@@ -1,46 +1,45 @@
 <?php
-include_once('adm_session.php');
+include('adm_session.php');
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserindo</title>
-    <link rel="stylesheet" href="/css/control.css">
+    <title>Painel de Controle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/panelcontrol.css">
 </head>
 <body>
-    <!-----------------------------------BOTAO PARA VOLTAR------------------------------------------------------->
-    <nav>
-        <ul class= "menu">
-            <li><a href="biblioteca.php">BIBLIOTECA</a></li>
-            <li><a href="album.php">ÁLBUM</a></li>
-            <li><a href="panelcontrol.php">PAINEL DE CONTROLE 2</a></li>
-        </ul>
-    </nav>
-    <!---------------------------------SELECIONE UMA IMAGEM---------------------------------------------------->
-    <div class="container">
-        <h1 class="heading">PAINEL DE CONTROLE</h1>
-    </div>
-    <!------------------------------ADICIONANDO DADOS NA TABELA--------------------------------------------->
-    <div class="container">
-        <form action="" method="post">
-            <div class="area">
-                <input type="submit" value="EDITAR USUARIOS" formaction="inserindo.php">
-                <input type="submit" value="ADICIONAR IMAGEM AO BANCO" formaction="upload.php">
-                <input type="submit" value="EDITAR/APAGAR IMAGEM" formaction="mostratela.php">
-                <input type="submit" value="CONSULTAR IMAGEM" formaction="consult_img/consult_control.php">
-            </div>
-            <div class="area">
-            <input type="submit" value="BIBLIOTECA" formaction="control_library.php">
-            </div>
-            <div class="area">
-            <input type="submit" value="ADICIONANDO IMAGENS NOS ALBUNS" formaction="add_img/panel_control.php">
-            </div>
 
-        </form>
+<div class="container-geral">
+    <div class="navbar">
+        <div class="container-top">
+            <div class="logo">
+                <h1>PAINEL DE CONTROLE</h1>
+            </div>
+            <div class="panel-content">
+                <ul>
+                    <li><a href="inserindo.php">Gerenciar Usuários</a></li>
+                    <li><a href="upload.php">Adicionar Imagem ao Banco</a></li>
+                    <li><a href="consult_img/consult_control.php">Consultar Imagem</a></li>
+                    <li><a href="control_library.php">Biblioteca</a></li>
+                    <li><a href="add_img/panel_control.php">Adicionando Imagens nos Albuns</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-bottom">
+            
+            <p><a href="/php/biblioteca.php"><i class="bi bi-box-arrow-right"></i> Biblioteca</a></p>
+            <p><a href="/php/logout.php"><i class="bi bi-box-arrow-right"></i> Sair</a></p>
+            
+           
+        </div>
     </div>
-    <!-------------------------------IMAGEM NA TELA-------------------------------------------------------------------->
+    <div class="main-content">
+        <img style="height: 115vh; width: 100vw;" src="/imgnovas/ti2.jpg" alt="">
+    </div>
+</div>
+
 </body>
 </html>

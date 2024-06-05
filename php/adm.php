@@ -71,6 +71,9 @@ mysqli_close($conexao);
                             <div class="card-footer">
                                 <button type="submit" class="submit">ENTRAR</button>
                             </div>
+                            <div class="card-cadastro">
+                                <button type="submit" class="teste" id="teste">VOLTAR</button>
+                            </div>
                     </div>
                     <?php if(isset($erro)) { ?>
                     <p class="error-message"><?php echo $erro; ?></p>
@@ -79,6 +82,11 @@ mysqli_close($conexao);
             </div>
         </div>
     </div>
-
+    <script>
+                document.getElementById("teste").addEventListener("click", function(event) {
+                    event.preventDefault(); 
+                        window.location.href = "/php/biblioteca.php";          
+                });
+            </script>
 </body>
 </html>

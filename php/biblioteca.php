@@ -49,14 +49,15 @@ include_once('biblioteca_session.php');
     if ($result->num_rows > 0) {
         echo '<div class="container-image">';
         while($row = $result->fetch_assoc()) {
-            echo '<form action = "formulario.php" method = "post">';
+            // echo '<form action = "formulario.php" method = "post">';
             echo '<div class="container-image">';
             echo '<div class="image" data-title="' . $row["id"] . '">';
-            echo '<img src="data:image/jpeg;base64,' . base64_encode($row["imagem"]) . '" alt="Imagem">';
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($row["imagem"]) . '" class="imagemDownload" alt="Imagem">';
             echo '<h3>' . $row["nome"] . '</h3>';
             echo '<input type = "submit" id="testebotao" name = "id" value = "BAIXAR" >';
             echo '</div>';
-            echo '</form>';
+            // echo '</form>';
+            echo '<button id="buttonDownload">Baixar</button>';
             echo '</div>';
         }
         echo '</div>';
@@ -75,6 +76,21 @@ include_once('biblioteca_session.php');
             event.preventDefault(); 
                 window.location.href = "logout.php";          
         });
+    </script>
+    <script>
+   document.querySelectorAll('.buttonDownload').forEach(button => {
+        button.addEventListener('click', function() {
+            const base64Image = button.getAttribute('data-base64');
+            
+            const link = document.createElement('a');
+            link.href = base64Image;
+            link.download = 'image.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+});
+
     </script>
 </body>
 </html>

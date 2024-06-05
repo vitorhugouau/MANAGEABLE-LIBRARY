@@ -3,7 +3,7 @@ include_once('banco.php');
 
 
     // Query para selecionar a imagem do banco de dados
-    $query = "SELECT imagem FROM biblioteca WHERE id = 15"; // Substitua "tabela" pelo nome da sua tabela e "1" pelo ID da imagem que deseja baixar
+    $query = "SELECT imagem FROM biblioteca WHERE id = "; // Substitua "tabela" pelo nome da sua tabela e "1" pelo ID da imagem que deseja baixar
 
     $result = $conexao->query($query);
 
