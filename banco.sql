@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/06/2024 às 02:23
+-- Tempo de geração: 06/06/2024 às 19:26
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -55,6 +55,27 @@ CREATE TABLE `album` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `artistas`
+--
+
+CREATE TABLE `artistas` (
+  `id` int(11) NOT NULL,
+  `artista` varchar(255) NOT NULL,
+  `idade` int(11) NOT NULL,
+  `id_equipamento` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `artistas`
+--
+
+INSERT INTO `artistas` (`id`, `artista`, `idade`, `id_equipamento`) VALUES
+(2, 'YAGO FORTANEX', 25, 1),
+(3, 'VITOR', 17, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `biblioteca`
 --
 
@@ -75,6 +96,56 @@ CREATE TABLE `cidade_alto` (
   `nome` varchar(100) NOT NULL,
   `imagem` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) NOT NULL,
+  `cpf` int(11) NOT NULL,
+  `datadenascimento` date NOT NULL,
+  `sexo` varchar(100) NOT NULL,
+  `estadocivil` varchar(100) NOT NULL,
+  `estado` varchar(250) NOT NULL,
+  `logradouro` varchar(250) NOT NULL,
+  `numero` int(11) NOT NULL,
+  `complemento` varchar(150) NOT NULL,
+  `cidade` varchar(150) NOT NULL,
+  `email` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nome`, `cpf`, `datadenascimento`, `sexo`, `estadocivil`, `estado`, `logradouro`, `numero`, `complemento`, `cidade`, `email`) VALUES
+(1, 'aaaaaaaaaaaaaa', 2147483647, '2005-02-13', 'Feminino', 'Divorciado(a)', 'aaaaaaaaaaaaaaaa', 'aaaaaaaaaaaaaaaa', 2020202, 'aaaaaaaaaa', 'aaaaaaaaaa', 'vsdaaaaaaaaaaaaaaaaaaa'),
+(2, 'nicolas', 15151, '2005-02-12', 'Feminino', 'Solteiro(a)', 'vsdvsdv', 'vsdvsd', 226262, 'vdsvsdvs', 'dvczdsvdsvdsvsdvsdvsdvsdvsdvdsv', 'sdvsdvsdv');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `equipamentos`
+--
+
+CREATE TABLE `equipamentos` (
+  `id_equipamento` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `modelo` varchar(255) NOT NULL,
+  `ano_fabricacao` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `equipamentos`
+--
+
+INSERT INTO `equipamentos` (`id_equipamento`, `nome`, `modelo`, `ano_fabricacao`) VALUES
+(1, 'DJI', 'MAVIC AIR', 2018),
+(2, 'CANON', 'G7X MARK III', 2016);
 
 -- --------------------------------------------------------
 
@@ -119,8 +190,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `email`, `senha`) VALUES
-(1, 'avvvvvvvvvvvvvv', 'avvvvvvvvvvvvv', 'avvvvvvvvvvvvvvv', 'avvvvvvvvvvvvvvv'),
-(2, 'a', 'a', 'a', 'a'),
+(2, 'a6666666', 'a666666', 'a666666', 'a666666'),
 (3, 'b', 'b', 'b', 'b'),
 (4, 'vitor', 'hugo', 'vitor', 'hugo'),
 (5, 'vitor', 'hugo', 'hugo', '123'),
@@ -153,7 +223,8 @@ INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `email`, `senha`) VALUES
 (33, '', '', 'bb', 'bbb'),
 (34, 'h', 'h', 'h', 'h'),
 (35, 'h', 'h', 'h', 'h'),
-(36, 'vitor', 'hugo', 'uau', '56');
+(36, 'vitor', 'hugo', 'uau', '56'),
+(38, 'a', 'a', 'a', 'a');
 
 -- --------------------------------------------------------
 
@@ -184,6 +255,13 @@ ALTER TABLE `album`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `artistas`
+--
+ALTER TABLE `artistas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_equipamento` (`id_equipamento`);
+
+--
 -- Índices de tabela `biblioteca`
 --
 ALTER TABLE `biblioteca`
@@ -194,6 +272,18 @@ ALTER TABLE `biblioteca`
 --
 ALTER TABLE `cidade_alto`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `equipamentos`
+--
+ALTER TABLE `equipamentos`
+  ADD PRIMARY KEY (`id_equipamento`);
 
 --
 -- Índices de tabela `nascer_sol`
@@ -236,16 +326,34 @@ ALTER TABLE `album`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT de tabela `artistas`
+--
+ALTER TABLE `artistas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de tabela `biblioteca`
 --
 ALTER TABLE `biblioteca`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de tabela `cidade_alto`
 --
 ALTER TABLE `cidade_alto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de tabela `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `equipamentos`
+--
+ALTER TABLE `equipamentos`
+  MODIFY `id_equipamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `nascer_sol`
@@ -257,19 +365,29 @@ ALTER TABLE `nascer_sol`
 -- AUTO_INCREMENT de tabela `rio`
 --
 ALTER TABLE `rio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `vegetacao`
 --
 ALTER TABLE `vegetacao`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `artistas`
+--
+ALTER TABLE `artistas`
+  ADD CONSTRAINT `artistas_ibfk_1` FOREIGN KEY (`id_equipamento`) REFERENCES `equipamentos` (`id_equipamento`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
