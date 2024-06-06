@@ -1,10 +1,10 @@
 <?php
-include_once('biblioteca_session.php');
+include_once('../adm_session.php');
 ?>
 <?php
     //--------------------------adicionar dados ------------------------------------------------------------------------------------
 
-    include('banco.php');
+    include('../banco.php');
     
     //--------------------------deletar dados ------------------------------------------------------------------------------------
     if(isset($_POST['delete_id'])) { // verifica se o formulário de exclusão foi submetido
@@ -21,7 +21,7 @@ include_once('biblioteca_session.php');
             echo "Erro ao deletar registro: " . $conexao->error;
         }
     }
-    $sql = "SELECT * FROM equipamentos";
+    $sql = "SELECT * FROM artistas";
     // executa a query
     $resultado = $conexao->query($sql);
 
@@ -35,16 +35,14 @@ include_once('biblioteca_session.php');
     <title>Inserindo</title>
     <link rel="stylesheet" href="/css/table.css">
 </head>
-<body background="/imgnovas/iacanga.JPEG" style="background-repeat: no-repeat;
-   
-    
-    ">
+<body background="/imgnovas/ti2.jpg">
 <!---------------------------------------BOTAO PARA VOLTAR------------------------------------------------------->
     <nav>
         <ul class= "menu">
-            <li><a href="biblioteca.php">BIBLIOTECA</a></li>
-            <li><a href="album.php">ÁLBUM</a></li>
-            <li><a href="biblioteca.php">VOLTAR</a></li>
+            <li><a href="../biblioteca.php">BIBLIOTECA</a></li>
+            <li><a href="../album.php">ÁLBUM</a></li>
+            <li><a href="add_artista.php">ADICIONAR ARTISTA</a></li>
+            <li><a href="../control.php">VOLTAR</a></li>
         </ul>
     </nav>
 <!-------------------------------------PHP-------------------------------------------------------------->
@@ -62,39 +60,49 @@ include_once('biblioteca_session.php');
                                             <br>
                                             <br>
                                             <br>
-<table class="table">
-    <thead>
-        <tr>
+    <table class = "table">
+        <thead>
             <th>ID</th>
-            <th>NOME DO EQUIPAMENTO</th>
-            <th>MODELO</th>
-            <th>ANO DE FABRICAÇÃO</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+            <th>ARTISTA</th>
+            <th>IDADE</th>
+            <th>EQUIPAMENTO DE USO</th>
+            <th>OPÇÕES</th>
+           
+        </thead>
+        <tbody>
         <?php
-        
-        while ($dados = $resultado->fetch_assoc()) {
-            echo "<tr>
+            // loop para exibir os resultados
+            while ($dados = $resultado->fetch_assoc()) {
+                echo "<tr>
+                <td>" . $dados["id"] . "</td>
+                <td>" . $dados["artista"] . "</td>
+                <td>" . $dados["idade"] . "</td>
                 <td>" . $dados["id_equipamento"] . "</td>
-                <td>" . $dados["nome"] . "</td>
-                <td>" . $dados["modelo"] . "</td>
-                <td>" . $dados["ano_fabricacao"] . "</td>
+                
                 <td>  
-        
-                </td>
-            </tr>";
+                            <form method='POST'>
+                            <div class='button-container'>
+                                <input type='hidden' name='delete_id' value='". $dados["id"] ."'> 
+                                <button type='submit' onclick='return confirmarExclusao()' class='btn btn-danger'>EXCLUIR</button>
+                                </div>
+                            </form>
+                            <form method='POST' action='edit_artista.php'>
+                                <input type='hidden' name='edit' value='". $dados["id"] ."'>
+                                <button type='submit' class='btn btn-success'>EDITAR</button>
+                            </form>
+                        </td>
+                    <tr>";
+                }
+            ?>
+        </tbody>
+    </table>
+<!-----------------------------MENSAGEM PARA CONFIRMAÇÃO DE EXCLUSÃO------------------------------------------------------->
+    <script>
+        // confirmação de exclusão
+        function confirmarExclusao() {
+            return confirm("EXCLUIR ESTE REGISTRO?");
         }
-        ?>
-    </tbody>
-</table>
-
-<script>
-function confirmarExclusao() {
-    return confirm('Você tem certeza que deseja excluir este equipamento?');
-}
-</script>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp
     4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

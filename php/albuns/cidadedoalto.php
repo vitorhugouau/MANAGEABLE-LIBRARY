@@ -10,27 +10,12 @@ include_once('../biblioteca_session.php');
     <title>BIBLIOTECA</title>
 </head>
 <body>
-    <nav>
-    <ul class="menu">
-        <li><a href="../biblioteca.php">HOME</a></li> 
-        <li><a href="#">SOBRE</a>
-            <ul>
-                <li><a href="https://www.dji.com/br/support/product/mavic-air">EQUIPAMENTOS USADOS</a></li>
-            </ul>
-        </li>
-        <li><a href="../album.php">ÁLBUM</a>
-        </li>
-        <li><a href="#">CONTATO</a>
-            <ul><a href="https://www.instagram.com/vitor_filmes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">INSTAGRAM</a></ul>
-        </li>
-        <li><a href="../adm.php">PAINEL DE CONTROLE</a></li>
-        <li class="logout">
-            <div class="card">
-                <button type="submit" class="submit" id="sair">SAIR</button>
-            </div>
-        </li>
-    </ul>
-</nav>
+<nav>
+        <ul class= "menu">
+            <li><a href="../biblioteca.php">BIBLIOTECA</a></li>
+            <li><a href="../album.php">VOLTAR</a></li>
+        </ul>
+    </nav>
     <div class="container">
             <h1 class ="heading">CIDADE DO ALTO</h1>
 

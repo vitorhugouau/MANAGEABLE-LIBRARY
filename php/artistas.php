@@ -21,7 +21,18 @@ include_once('biblioteca_session.php');
             echo "Erro ao deletar registro: " . $conexao->error;
         }
     }
-    $sql = "SELECT * FROM equipamentos";
+    $sql = "SELECT 
+    artistas.artista,
+    artistas.idade,
+    equipamentos.id_equipamento,
+    equipamentos.nome AS nome_equipamento,
+    equipamentos.modelo,
+    equipamentos.ano_fabricacao
+FROM 
+    artistas
+JOIN 
+    equipamentos ON artistas.id_equipamento = equipamentos.id_equipamento;
+";
     // executa a query
     $resultado = $conexao->query($sql);
 
@@ -66,7 +77,9 @@ include_once('biblioteca_session.php');
     <thead>
         <tr>
             <th>ID</th>
-            <th>NOME DO EQUIPAMENTO</th>
+            <th>ARTISTA</th>
+            <th>IDADE</th>
+            <th>EQUIPAMENTO DE USO</th>
             <th>MODELO</th>
             <th>ANO DE FABRICAÇÃO</th>
             <th></th>
@@ -78,11 +91,13 @@ include_once('biblioteca_session.php');
         while ($dados = $resultado->fetch_assoc()) {
             echo "<tr>
                 <td>" . $dados["id_equipamento"] . "</td>
-                <td>" . $dados["nome"] . "</td>
+                <td>" . $dados["artista"] . "</td>
+                <td>" . $dados["idade"] . "</td>
+                <td>" . $dados["nome_equipamento"] . "</td>
                 <td>" . $dados["modelo"] . "</td>
                 <td>" . $dados["ano_fabricacao"] . "</td>
                 <td>  
-        
+                    
                 </td>
             </tr>";
         }
