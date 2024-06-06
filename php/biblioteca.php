@@ -19,6 +19,7 @@ include_once('biblioteca_session.php');
         <li><a href="#">SOBRE</a>
             <ul>
                 <li><a href="https://www.dji.com/br/support/product/mavic-air">EQUIPAMENTOS USADOS</a></li>
+                <li><a href="equipamento.php">EQUIPAMENTOS USADOS</a></li>
             </ul>
         </li>
         <li><a href="album.php">ÁLBUM</a>
@@ -63,7 +64,7 @@ include_once('biblioteca_session.php');
             echo '<h3>' . $row["nome"] . '</h3>';
             echo '</div>';
             // echo '</form>';
-            echo '<button id="buttonDownload">Baixar</button>';
+           
             echo '</div>';
         }
         echo '</div>';

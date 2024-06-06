@@ -39,9 +39,9 @@ include_once('../adm_session.php');
 <!---------------------------------------BOTAO PARA VOLTAR------------------------------------------------------->
     <nav>
         <ul class= "menu">
-            <li><a href="biblioteca.php">BIBLIOTECA</a></li>
-            <li><a href="album.php">ÁLBUM</a></li>
-            <li><a href="control.php">VOLTAR</a></li>
+            <li><a href="../biblioteca.php">BIBLIOTECA</a></li>
+            <li><a href="../album.php">ÁLBUM</a></li>
+            <li><a href="../control.php">VOLTAR</a></li>
         </ul>
     </nav>
 <!-------------------------------------PHP-------------------------------------------------------------->
