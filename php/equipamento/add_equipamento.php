@@ -1,5 +1,5 @@
 <?php
-include('../biblioteca_session.php');
+include_once('../adm_session.php');
 include_once('../banco.php');
 
 if(isset($_POST['submit'])){
