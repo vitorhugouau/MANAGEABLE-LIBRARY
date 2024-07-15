@@ -11,7 +11,7 @@ if(isset($_POST["submit"])) {
     $imageData = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
 
     // Prepara a instrução SQL para inserir os dados da imagem no banco de dados
-    $sql = "INSERT INTO biclioteca (nome, imagem) VALUES ('$imageName', '$imageData')";
+    $sql = "INSERT INTO biblioteca (nome, imagem) VALUES ('$imageName', '$imageData')";
 
     // Executa a instrução SQL
     if ($conexao->query($sql) === TRUE) {

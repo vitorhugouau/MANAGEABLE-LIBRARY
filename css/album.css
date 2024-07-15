@@ -11,7 +11,7 @@ body {
     background-size: cover; 
     font: normal 20pt 'Poppins';
 }
-/*-----------------------------------MENU------------------------------------*/
+/*---------------------------------MENU--------------------------------------*/
 .menu {
     list-style-type: none;
     margin: 0 auto; /* Centralizar horizontalmente */
@@ -24,6 +24,7 @@ body {
     justify-content: center; /* Centralizar os itens horizontalmente */
     align-items: center; /* Centralizar os itens verticalmente */
 }
+
 
 .menu li {
     display: inline-block;
@@ -79,6 +80,7 @@ body {
 #sair:hover {
     background-color: #0d3a75;
 }
+
 /*------------------------------SELECIONAR------------------------------*/
 .container{
     padding: 5px 15%;

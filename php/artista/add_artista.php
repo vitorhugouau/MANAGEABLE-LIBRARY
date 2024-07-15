@@ -58,9 +58,24 @@ if(isset($_POST['submit'])){
                                     <input type="text" name="idade" id="idade" required>
                                  </div>
                                  <div class="card-content-area">
-                                     <label for="id_equipamento">EQUIPAMENTO DE USO</label>
-                                    <input type="text" name="id_equipamento" id="id_equipamento" required>
-                                 </div>
+                                    <label for="id_equipamento">EQUIPAMENTO DE USO</label>
+                                    <select name="id_equipamento" id="id_equipamento" required>
+                                        <option value="">SELECIONE UM EQUIPAMENTO</option>
+                                        <?php
+                                        // Supondo que $conn seja sua conexão com o banco de dados
+                                        $sql = "SELECT id_equipamento, nome FROM equipamentos";
+                                        $resultado = $conexao->query($sql);
+
+                                        if ($resultado->num_rows > 0) {
+                                            while ($row = $resultado->fetch_assoc()) {
+                                                echo "<option value='" . $row['id_equipamento'] . "'>" . $row['nome'] . "</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>Nenhum equipamento encontrado</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                                  
                                 </div>
                                 

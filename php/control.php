@@ -28,6 +28,7 @@ include('adm_session.php');
                     <li><a href="cliente/crud_serviço.php">Gerenciador de clientes</a></li>
                     <li><a href="artista/crud_artista.php">Artistas</a></li>
                     <li><a href="equipamento/crud_equipamento.php">Equipamentos</a></li>
+                    <li><a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=vitorhugo">Banco de Dados</a></li>
                 </ul>
             </div>
         </div>
