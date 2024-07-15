@@ -22,7 +22,6 @@ include_once('../adm_session.php');
         }
     }
     $sql = "SELECT 
-<<<<<<< HEAD
     artistas.id,
     artistas.artista,
     artistas.idade,
@@ -33,11 +32,10 @@ include_once('../adm_session.php');
 FROM 
     artistas
 JOIN 
-    equipamentos ON artistas.id_equipamento = equipamentos.id_equipamento;
-";
+    equipamentos ON artistas.id_equipamento = equipamentos.id_equipamento";
 
-    // executa a query
-    $resultado = $conexao->query($sql);
+// executa a query
+$resultado = $conexao->query($sql);
 
 ?>
  <!------------------------------------------------------------------------------------>
@@ -80,6 +78,7 @@ JOIN
             <th>ARTISTA</th>
             <th>IDADE</th>
             <th>EQUIPAMENTO DE USO</th>
+            <th>NOME</th>
             <th>OPÇÕES</th>
            
         </thead>
@@ -94,7 +93,7 @@ JOIN
 
                 <td>" . $dados["nome"] . "</td>
 
-                <td>" . $dados["nome_equipamento"] . "</td>
+                <td>" . $dados["nome"] . "</td>
 
                 
                 <td>  

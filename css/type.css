@@ -45,7 +45,6 @@ header{
     align-items: center; /* Centralizar os itens verticalmente */
 }
 
-
 .menu li {
     display: inline-block;
     position: relative; /* Para posicionar o submenu */

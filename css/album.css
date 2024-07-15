@@ -4,12 +4,22 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-image: url('/imgnovas/rio.jpg');
     background-size: cover; 
-    font: normal 20pt 'Poppins';
+    
+}
+
+header{
+    color: rgb(18, 18, 24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
 /*---------------------------------MENU--------------------------------------*/
 .menu {
@@ -81,6 +91,7 @@ body {
     background-color: #0d3a75;
 }
 
+
 /*------------------------------SELECIONAR------------------------------*/
 .container{
     padding: 5px 15%;
@@ -104,7 +115,7 @@ body {
 }
 
 .container .container-image .image{
-    width: 600px;/*comprimento*/
+    width: 600px;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
@@ -114,7 +125,7 @@ body {
 }
 .container .container-image .image img{
     width: 100%;
-    height: 300px; /*altura*/
+    height: 300px; 
     object-fit: cover;
     margin-bottom: 10px;
     border-radius: 5px;
