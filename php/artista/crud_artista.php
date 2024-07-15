@@ -22,6 +22,7 @@ include_once('../adm_session.php');
         }
     }
     $sql = "SELECT 
+<<<<<<< HEAD
     artistas.id,
     artistas.artista,
     artistas.idade,
@@ -34,6 +35,7 @@ FROM
 JOIN 
     equipamentos ON artistas.id_equipamento = equipamentos.id_equipamento;
 ";
+
     // executa a query
     $resultado = $conexao->query($sql);
 
@@ -89,7 +91,11 @@ JOIN
                 <td>" . $dados["id"] . "</td>
                 <td>" . $dados["artista"] . "</td>
                 <td>" . $dados["idade"] . "</td>
+
                 <td>" . $dados["nome"] . "</td>
+
+                <td>" . $dados["nome_equipamento"] . "</td>
+
                 
                 <td>  
                             <form method='POST'>
