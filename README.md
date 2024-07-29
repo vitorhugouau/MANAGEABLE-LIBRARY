@@ -1,14 +1,14 @@
 # Biblioteca Gerenciável 
 
-LOGIN
+# LOGIN
 
 ![Screenshot](./assets/img/login.png)
 
-REGISTER 
+# REGISTER 
 
 ![Screenshot](./assets/img/cadastro.png)
 
-HOME
+# HOME
 
 ![Screenshot](./assets/img/index.png)
 
