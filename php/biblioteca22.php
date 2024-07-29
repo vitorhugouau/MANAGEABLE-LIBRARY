@@ -8,18 +8,17 @@ include_once('biblioteca_session.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/type.css">
     <title>Document</title>
     
 </head>
-
 <body background="/img/nova1920.jpg">
 <nav>
     <ul class="menu">
         <li><a href="#">HOME</a></li> 
         <li><a href="#">SOBRE</a>
             <ul>
-                <li><a href="https://www.dji.com/br/support/product/mavic-air">EQUIPAMENTOS USADOS</a></li>
+                <li><a href="equipamento.php">EQUIPAMENTOS USADOS</a></li>
             </ul>
         </li>
         <li><a href="album.php">ÁLBUM</a>
@@ -27,12 +26,20 @@ include_once('biblioteca_session.php');
         <li><a href="#">CONTATO</a>
             <ul><a href="https://www.instagram.com/vitor_filmes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">INSTAGRAM</a></ul>
         </li>
+        <li><a href="artistas.php">ARTISTAS</a>
+
+        <li><a href="#">SERVIÇOS</a>
+            <ul>
+                <li><a href="cliente/serviço.php">CONTRATAR SERVIÇO</a></li>
+            </ul>
+        </li>
         <li><a href="adm.php">PAINEL DE CONTROLE</a></li>
         <li class="logout">
             <div class="card">
                 <button type="submit" class="submit" id="sair">SAIR</button>
             </div>
         </li>
+        
     </ul>
 </nav>
 

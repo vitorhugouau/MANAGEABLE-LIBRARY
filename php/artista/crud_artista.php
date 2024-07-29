@@ -21,17 +21,6 @@ include_once('../adm_session.php');
             echo "Erro ao deletar registro: " . $conexao->error;
         }
     }
-    $sql = "SELECT 
-    artistas.id AS id,
-    artistas.artista,
-    artistas.idade,
-    equipamentos.nome AS nome_equipamento
-FROM 
-    artistas
-JOIN 
-    equipamentos ON artistas.id_equipamento = equipamentos.id_equipamento;";
-    // executa a query
-    $resultado = $conexao->query($sql);
 
 ?>
  <!------------------------------------------------------------------------------------>
@@ -74,6 +63,7 @@ JOIN
             <th>ARTISTA</th>
             <th>IDADE</th>
             <th>EQUIPAMENTO DE USO</th>
+            <th>NOME</th>
             <th>OPÇÕES</th>
            
         </thead>
@@ -85,7 +75,7 @@ JOIN
                 <td>" . $dados["id"] . "</td>
                 <td>" . $dados["artista"] . "</td>
                 <td>" . $dados["idade"] . "</td>
-                <td>" . $dados["nome_equipamento"] . "</td>
+                <td>" . $dados["id_equipamento"] . "</td>
                 
                 <td>  
                             <form method='POST'>
