@@ -100,12 +100,6 @@ if(isset($_POST['edit'])) {
                 <input type="text" name="cidade" id="cidade" value="<?php echo $row['cidade']; ?>">
             </div>
 
-            <div class="area">
-                <label for="email">EMAIL</label>
-                <input type="text" name="email" id="email" value="<?php echo $row['email']; ?>">
-            </div>
-
-
             <div>
                 <input type="submit" value="SALVAR ALTERAÇÕES">
             </div>
