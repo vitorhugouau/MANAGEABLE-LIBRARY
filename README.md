@@ -1,3 +1,3 @@
 # Biblioteca Gerenciável 
 
-![Screenshot](./assents/img/login.png)
+![Screenshot](./assets/img/login.png)
