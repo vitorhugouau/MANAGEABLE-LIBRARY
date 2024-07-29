@@ -21,6 +21,20 @@ include_once('../adm_session.php');
             echo "Erro ao deletar registro: " . $conexao->error;
         }
     }
+    $sql = "SELECT 
+    artistas.id AS id,
+    artistas.artista,
+    artistas.idade,
+    equipamentos.nome AS nome_equipamento
+FROM 
+    artistas
+JOIN 
+    equipamentos ON artistas.id_equipamento = equipamentos.id_equipamento;";
+    // executa a query
+    $resultado = $conexao->query($sql);
+    
+// executa a query
+$resultado = $conexao->query($sql);
 
 ?>
  <!------------------------------------------------------------------------------------>
@@ -75,7 +89,15 @@ include_once('../adm_session.php');
                 <td>" . $dados["id"] . "</td>
                 <td>" . $dados["artista"] . "</td>
                 <td>" . $dados["idade"] . "</td>
-                <td>" . $dados["id_equipamento"] . "</td>
+<<<<<<< HEAD
+                <td>" . $dados["nome_equipamento"] . "</td>
+=======
+
+                <td>" . $dados["nome"] . "</td>
+
+                <td>" . $dados["nome"] . "</td>
+
+>>>>>>> 7ffd04d9bfa3e9a7723a96eaa70350414af3f6ea
                 
                 <td>  
                             <form method='POST'>
