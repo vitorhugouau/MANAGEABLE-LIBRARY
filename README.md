@@ -18,8 +18,6 @@
 ![Screenshot](./assets/img/dentrodeconsultadeimg.png)
 
 
-![Screenshot](./assets/img/formulario.png)
-
 
 ![Screenshot](./assets/img/consultadeimagens].png)
 
